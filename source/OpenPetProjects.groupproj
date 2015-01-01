@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E632EF04-63E7-416A-B6F3-E3013E00DEDA}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="client\vcl\OpenPetClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="common\OpenPetEntities.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="OpenPetClient">
+        <MSBuild Projects="client\vcl\OpenPetClient.dproj"/>
+    </Target>
+    <Target Name="OpenPetClient:Clean">
+        <MSBuild Projects="client\vcl\OpenPetClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OpenPetClient:Make">
+        <MSBuild Projects="client\vcl\OpenPetClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OpenPetEntities">
+        <MSBuild Projects="common\OpenPetEntities.dproj"/>
+    </Target>
+    <Target Name="OpenPetEntities:Clean">
+        <MSBuild Projects="common\OpenPetEntities.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OpenPetEntities:Make">
+        <MSBuild Projects="common\OpenPetEntities.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="OpenPetClient;OpenPetEntities"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="OpenPetClient:Clean;OpenPetEntities:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="OpenPetClient:Make;OpenPetEntities:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
