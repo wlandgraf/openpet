@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F7D01FB7-E64F-4EA9-A270-5721C6C34C70}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="app\AlfaPet.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="app\AlfaPetEntidades.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="server\AlfaPetServer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AlfaPet">
+        <MSBuild Projects="app\AlfaPet.dproj"/>
+    </Target>
+    <Target Name="AlfaPet:Clean">
+        <MSBuild Projects="app\AlfaPet.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AlfaPet:Make">
+        <MSBuild Projects="app\AlfaPet.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AlfaPetEntidades">
+        <MSBuild Projects="app\AlfaPetEntidades.dproj"/>
+    </Target>
+    <Target Name="AlfaPetEntidades:Clean">
+        <MSBuild Projects="app\AlfaPetEntidades.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AlfaPetEntidades:Make">
+        <MSBuild Projects="app\AlfaPetEntidades.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AlfaPetServer">
+        <MSBuild Projects="server\AlfaPetServer.dproj"/>
+    </Target>
+    <Target Name="AlfaPetServer:Clean">
+        <MSBuild Projects="server\AlfaPetServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AlfaPetServer:Make">
+        <MSBuild Projects="server\AlfaPetServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AlfaPet;AlfaPetEntidades;AlfaPetServer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AlfaPet:Clean;AlfaPetEntidades:Clean;AlfaPetServer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AlfaPet:Make;AlfaPetEntidades:Make;AlfaPetServer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

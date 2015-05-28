@@ -56,3 +56,4 @@ __history/
 # Delphi binary files
 Win32/
 Win64/
+*.stat
