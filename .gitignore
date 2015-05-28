@@ -52,3 +52,7 @@
 # Delphi history and backups
 __history/
 *.~*
+
+# Delphi binary files
+Win32/
+Win64/
