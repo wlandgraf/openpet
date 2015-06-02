@@ -39,6 +39,10 @@ object fmSummary: TfmSummary
     TabOrder = 1
     object tsIncomeByArea: TTabSheet
       Caption = 'Faturamento Por '#193'rea'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object DBGrid1: TDBGrid
         Left = 0
         Top = 0
@@ -81,6 +85,10 @@ object fmSummary: TfmSummary
     object tsIncomeProduct: TTabSheet
       Caption = 'Faturamento por categoria'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object DBGrid2: TDBGrid
         Left = 0
         Top = 0
@@ -123,6 +131,10 @@ object fmSummary: TfmSummary
     object tsTopCustomers: TTabSheet
       Caption = 'Por Cliente'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel3: TPanel
         Left = 0
         Top = 374

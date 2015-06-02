@@ -84,7 +84,7 @@ begin
   SetLength(FDates, 24);
   for I := 1 to Length(FDates) - 1 do
   begin
-    FDates[I - 1] := EncodeDate(Y, M, D);
+    FDates[I - 1] := EncodeDate(Y, M, 1);
     cbMonth.Items.Add(FormatDateTime('mmmm/yyyy', FDates[I - 1]));
     Dec(M);
     if M = 0 then
